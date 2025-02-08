@@ -9,7 +9,7 @@ public class Test
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private int x;
-    private int y;
+    private int y,z;
     /**
      * Konstruktor für Objekte der Klasse Test
      */
