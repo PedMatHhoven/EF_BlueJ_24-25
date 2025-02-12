@@ -1,19 +1,15 @@
-package Original;
-
-import java.awt.Polygon;
+import java.awt.geom.Ellipse2D;
 
 /**
- * Ein Dreieck, das manipuliert werden kann und sich selbst auf einer Leinwand
+ * Ein Kreis, der manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kï¿½lling und David J. Barnes
+ * @author Michael Kölling und David J. Barnes
  * @version 31.07.2011
  */
 
-public class Dreieck {
-    private int hoehe;
-
-    private int breite;
+public class Kreis {
+    private int durchmesser;
 
     private int xPosition;
 
@@ -24,19 +20,19 @@ public class Dreieck {
     private boolean istSichtbar;
 
     /**
-     * Erzeuge ein Dreieck mit einer Standardfarbe an einer Standardposition.
+     * Erzeuge einen neuen Kreis an einer Standardposition mit einer
+     * Standardfarbe.
      */
-    public Dreieck() {
-        hoehe = 60;
-        breite = 70;
-        xPosition = 210;
-        yPosition = 140;
-        farbe = "gruen";
-        istSichtbar = false;
+    public Kreis(int dm, int x, int y, String color) {
+        durchmesser = dm;
+        xPosition = x;
+        yPosition = y;
+        farbe = color;
+        sichtbarMachen();
     }
 
     /**
-     * Mache dieses Dreieck sichtbar. Wenn es bereits sichtbar ist, tue nichts.
+     * Mache diesen Kreis sichtbar. Wenn es bereits sichtbar ist, tue nichts.
      */
     public void sichtbarMachen() {
         istSichtbar = true;
@@ -44,7 +40,7 @@ public class Dreieck {
     }
 
     /**
-     * Mache dieses Dreieck unsichtbar. Wenn es bereits unsichtbar ist, tue
+     * Mache diesen Kreis unsichtbar. Wenn es bereits unsichtbar ist, tue
      * nichts.
      */
     public void unsichtbarMachen() {
@@ -53,35 +49,35 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach rechts.
+     * Bewege diesen Kreis einige Bildschirmpunkte nach rechts.
      */
     public void nachRechtsBewegen() {
         horizontalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach links.
+     * Bewege diesen Kreis einige Bildschirmpunkte nach links.
      */
     public void nachLinksBewegen() {
         horizontalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach oben.
+     * Bewege diesen Kreis einige Bildschirmpunkte nach oben.
      */
     public void nachObenBewegen() {
         vertikalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach unten.
+     * Bewege diesen Kreis einige Bildschirmpunkte nach unten.
      */
     public void nachUntenBewegen() {
         vertikalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck horizontal um 'entfernung' Bildschirmpunkte.
+     * Bewege diesen Kreis horizontal um 'entfernung' Bildschirmpunkte.
      */
     public void horizontalBewegen(int entfernung) {
         loeschen();
@@ -90,7 +86,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege diesen Kreis vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void vertikalBewegen(int entfernung) {
         loeschen();
@@ -99,8 +95,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam horizontal um 'entfernung'
-     * Bildschirmpunkte.
+     * Bewege diesen Kreis langsam horizontal um 'entfernung' Bildschirmpunkte.
      */
     public void langsamHorizontalBewegen(int entfernung) {
         int delta;
@@ -119,7 +114,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege diesen Kreis langsam vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void langsamVertikalBewegen(int entfernung) {
         int delta;
@@ -138,18 +133,17 @@ public class Dreieck {
     }
 
     /**
-     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
+     * Ändere den Durchmesser dieses Kreises in 'neuerDurchmesser' (Angabe in
+     * Bildschirmpunkten). 'neuerDurchmesser' muss größer gleich Null sein.
      */
-    public void groesseAendern(int neueHoehe, int neueBreite) {
+    public void groesseAendern(int neuerDurchmesser) {
         loeschen();
-        hoehe = neueHoehe;
-        breite = neueBreite;
+        durchmesser = neuerDurchmesser;
         zeichnen();
     }
 
     /**
-     * ï¿½ndere die Farbe dieses Dreiecks in 'neueFarbe'. Gï¿½ltige Angaben sind
+     * Ändere die Farbe dieses Kreises in 'neueFarbe'. Gültige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -158,21 +152,19 @@ public class Dreieck {
     }
 
     /**
-     * Zeichne dieses Dreieck mit seinen aktuellen Werten auf den Bildschirm.
+     * Zeichne diesen Kreis mit seinen aktuellen Werten auf den Bildschirm.
      */
     private void zeichnen() {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
-            int[] xpoints = { xPosition, xPosition + (breite / 2),
-                    xPosition - (breite / 2) };
-            int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
-            leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
+            leinwand.zeichne(this, farbe, new Ellipse2D.Double(xPosition,
+                    yPosition, durchmesser, durchmesser));
             leinwand.warte(10);
         }
     }
 
     /**
-     * Lï¿½sche dieses Dreieck vom Bildschirm.
+     * Lösche diesen Kreis vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {
@@ -180,4 +172,5 @@ public class Dreieck {
             leinwand.entferne(this);
         }
     }
+
 }

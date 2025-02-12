@@ -1,19 +1,17 @@
-package Original;
+package Mensch;
 
-import java.awt.Polygon;
+import java.awt.Rectangle;
 
 /**
- * Ein Dreieck, das manipuliert werden kann und sich selbst auf einer Leinwand
+ * Ein Quadrat, das manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kï¿½lling und David J. Barnes
+ * @author Michael Kölling und David J. Barnes
  * @version 31.07.2011
  */
 
-public class Dreieck {
-    private int hoehe;
-
-    private int breite;
+public class Quadrat {
+    private int groesse;
 
     private int xPosition;
 
@@ -24,19 +22,19 @@ public class Dreieck {
     private boolean istSichtbar;
 
     /**
-     * Erzeuge ein Dreieck mit einer Standardfarbe an einer Standardposition.
+     * Erzeuge ein neues Quadrat mit einer Standardfarbe an einer
+     * Standardposition.
      */
-    public Dreieck() {
-        hoehe = 60;
-        breite = 70;
-        xPosition = 210;
-        yPosition = 140;
-        farbe = "gruen";
+    public Quadrat() {
+        groesse = 60;
+        xPosition = 310;
+        yPosition = 120;
+        farbe = "rot";
         istSichtbar = false;
     }
 
     /**
-     * Mache dieses Dreieck sichtbar. Wenn es bereits sichtbar ist, tue nichts.
+     * Mache dieses Quadrat sichtbar. Wenn es bereits sichtbar ist, tue nichts.
      */
     public void sichtbarMachen() {
         istSichtbar = true;
@@ -44,7 +42,7 @@ public class Dreieck {
     }
 
     /**
-     * Mache dieses Dreieck unsichtbar. Wenn es bereits unsichtbar ist, tue
+     * Mache dieses Quadrat unsichtbar. Wenn es bereits unsichtbar ist, tue
      * nichts.
      */
     public void unsichtbarMachen() {
@@ -53,44 +51,44 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach rechts.
+     * Bewege dieses Quadrat einige Bildschirmpunkte nach rechts.
      */
     public void nachRechtsBewegen() {
         horizontalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach links.
+     * Bewege dieses Quadrat einige Bildschirmpunkte nach links.
      */
     public void nachLinksBewegen() {
         horizontalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach oben.
+     * Bewege dieses Quadrat einige Bildschirmpunkte nach oben.
      */
     public void nachObenBewegen() {
         vertikalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach unten.
+     * Bewege dieses Quadrat einige Bildschirmpunkte nach unten.
      */
     public void nachUntenBewegen() {
         vertikalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck horizontal um 'entfernung' Bildschirmpunkte.
+     * Bewege dieses Quadrat horizontal um 'entfernung' Bildschirmpunkte.
      */
-    public void horizontalBewegen(int entfernung) {
+    public void horizontalBewegen(int distance) {
         loeschen();
-        xPosition += entfernung;
+        xPosition += distance;
         zeichnen();
     }
 
     /**
-     * Bewege dieses Dreieck vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege dieses Quadrat vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void vertikalBewegen(int entfernung) {
         loeschen();
@@ -99,7 +97,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam horizontal um 'entfernung'
+     * Bewege dieses Quadrat langsam horizontal um 'entfernung'
      * Bildschirmpunkte.
      */
     public void langsamHorizontalBewegen(int entfernung) {
@@ -119,7 +117,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege dieses Quadrat langsam vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void langsamVertikalBewegen(int entfernung) {
         int delta;
@@ -138,18 +136,17 @@ public class Dreieck {
     }
 
     /**
-     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
+     * Ändere die Größe dieses Quadrates in 'neueGroesse'. 'neueGroesse' muss
+     * groesser gleich Null sein.
      */
-    public void groesseAendern(int neueHoehe, int neueBreite) {
+    public void groesseAendern(int neueGroesse) {
         loeschen();
-        hoehe = neueHoehe;
-        breite = neueBreite;
+        groesse = neueGroesse;
         zeichnen();
     }
 
     /**
-     * ï¿½ndere die Farbe dieses Dreiecks in 'neueFarbe'. Gï¿½ltige Angaben sind
+     * Ändere die Farbe dieses Quadrates in 'neueFarbe'. Gültige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -158,21 +155,19 @@ public class Dreieck {
     }
 
     /**
-     * Zeichne dieses Dreieck mit seinen aktuellen Werten auf den Bildschirm.
+     * Zeichne dieses Quadrat mit seinen aktuellen Werten auf den Bildschirm.
      */
     private void zeichnen() {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
-            int[] xpoints = { xPosition, xPosition + (breite / 2),
-                    xPosition - (breite / 2) };
-            int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
-            leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
+            leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
+                    groesse, groesse));
             leinwand.warte(10);
         }
     }
 
     /**
-     * Lï¿½sche dieses Dreieck vom Bildschirm.
+     * Lösche dieses Quadrat vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {

@@ -1,12 +1,10 @@
-package Original;
-
 import java.awt.Polygon;
 
 /**
  * Ein Dreieck, das manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kï¿½lling und David J. Barnes
+ * @author Michael Kölling und David J. Barnes
  * @version 31.07.2011
  */
 
@@ -138,18 +136,18 @@ public class Dreieck {
     }
 
     /**
-     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
+     * Ändere die Höhe in 'neueHoehe' und die Breite in 'neueBreite'. Beide
+     * Angaben müssen größer gleich Null sein.
      */
     public void groesseAendern(int neueHoehe, int neueBreite) {
-        loeschen();
+
         hoehe = neueHoehe;
         breite = neueBreite;
         zeichnen();
     }
 
     /**
-     * ï¿½ndere die Farbe dieses Dreiecks in 'neueFarbe'. Gï¿½ltige Angaben sind
+     * Ändere die Farbe dieses Dreiecks in 'neueFarbe'. Gültige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -163,16 +161,16 @@ public class Dreieck {
     private void zeichnen() {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
-            int[] xpoints = { xPosition, xPosition + (breite / 2),
+            int[] xpunkte = { xPosition, xPosition + (breite / 2),
                     xPosition - (breite / 2) };
-            int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
-            leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
+            int[] ypunkte = { yPosition, yPosition + hoehe, yPosition + hoehe };
+            leinwand.zeichne(this, farbe, new Polygon(xpunkte, ypunkte, 3));
             leinwand.warte(10);
         }
     }
 
     /**
-     * Lï¿½sche dieses Dreieck vom Bildschirm.
+     * Lösche dieses Dreieck vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {

@@ -1,42 +1,37 @@
-package Original;
+package Mensch;
 
 import java.awt.Polygon;
 
 /**
- * Ein Dreieck, das manipuliert werden kann und sich selbst auf einer Leinwand
+ * Eine Persion, die manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kï¿½lling und David J. Barnes
+ * @author Michael Kölling und David J. Barnes
  * @version 31.07.2011
  */
 
-public class Dreieck {
+public class Person {
     private int hoehe;
-
     private int breite;
-
     private int xPosition;
-
     private int yPosition;
-
     private String farbe;
-
     private boolean istSichtbar;
 
     /**
-     * Erzeuge ein Dreieck mit einer Standardfarbe an einer Standardposition.
+     * Erzeuge eine Person mit einer Standardfarbe an einer Standardposition.
      */
-    public Dreieck() {
+    public Person() {
         hoehe = 60;
-        breite = 70;
-        xPosition = 210;
-        yPosition = 140;
-        farbe = "gruen";
+        breite = 30;
+        xPosition = 280;
+        yPosition = 190;
+        farbe = "schwarz";
         istSichtbar = false;
     }
 
     /**
-     * Mache dieses Dreieck sichtbar. Wenn es bereits sichtbar ist, tue nichts.
+     * Mache diese Person sichtbar. Wenn sie bereits sichtbar ist, tue nichts.
      */
     public void sichtbarMachen() {
         istSichtbar = true;
@@ -44,7 +39,7 @@ public class Dreieck {
     }
 
     /**
-     * Mache dieses Dreieck unsichtbar. Wenn es bereits unsichtbar ist, tue
+     * Mache diese Person unsichtbar. Wenn sie bereits unsichtbar ist, tue
      * nichts.
      */
     public void unsichtbarMachen() {
@@ -53,35 +48,35 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach rechts.
+     * Bewege diese Person einige Bildschirmpunkte nach rechts.
      */
     public void nachRechtsBewegen() {
         horizontalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach links.
+     * Bewege diese Person einige Bildschirmpunkte nach links.
      */
     public void nachLinksBewegen() {
         horizontalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach oben.
+     * Bewege diese Person einige Bildschirmpunkte nach oben.
      */
     public void nachObenBewegen() {
         vertikalBewegen(-20);
     }
 
     /**
-     * Bewege dieses Dreieck einige Bildschirmpunkte nach unten.
+     * Bewege diese Person einige Bildschirmpunkte nach unten.
      */
     public void nachUntenBewegen() {
         vertikalBewegen(20);
     }
 
     /**
-     * Bewege dieses Dreieck horizontal um 'entfernung' Bildschirmpunkte.
+     * Bewege diese Person horizontal um 'entfernung' Bildschirmpunkte.
      */
     public void horizontalBewegen(int entfernung) {
         loeschen();
@@ -90,7 +85,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege diese Person vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void vertikalBewegen(int entfernung) {
         loeschen();
@@ -99,7 +94,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam horizontal um 'entfernung'
+     * Bewege diese Person langsam horizontal um 'entfernung'
      * Bildschirmpunkte.
      */
     public void langsamHorizontalBewegen(int entfernung) {
@@ -119,7 +114,7 @@ public class Dreieck {
     }
 
     /**
-     * Bewege dieses Dreieck langsam vertikal um 'entfernung' Bildschirmpunkte.
+     * Bewege diese Person langsam vertikal um 'entfernung' Bildschirmpunkte.
      */
     public void langsamVertikalBewegen(int entfernung) {
         int delta;
@@ -138,8 +133,8 @@ public class Dreieck {
     }
 
     /**
-     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
+     * Ändere die Höhe in 'neueHoehe' und die Breite in 'neueBreite'. Beide
+     * Angaben müssen größer gleich Null sein.
      */
     public void groesseAendern(int neueHoehe, int neueBreite) {
         loeschen();
@@ -149,7 +144,7 @@ public class Dreieck {
     }
 
     /**
-     * ï¿½ndere die Farbe dieses Dreiecks in 'neueFarbe'. Gï¿½ltige Angaben sind
+     * Ändere die Farbe dieser Person in 'neueFarbe'. Gültige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -158,21 +153,32 @@ public class Dreieck {
     }
 
     /**
-     * Zeichne dieses Dreieck mit seinen aktuellen Werten auf den Bildschirm.
+     * Zeichne diese Person mit ihren aktuellen Werten auf den Bildschirm.
      */
     private void zeichnen() {
-        if (istSichtbar) {
+        int bh = (int)(hoehe * 0.7);  // Körpergröße
+        int hh = (hoehe - bh) / 2;  // halbe Kopfgröße
+        int hw = breite / 2;  // halbe Breite
+        int x = xPosition;
+        int y = yPosition;
+      
+        if(istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
-            int[] xpoints = { xPosition, xPosition + (breite / 2),
-                    xPosition - (breite / 2) };
-            int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
-            leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
+            int[] xpunkte = { x-3, x-hw, x-hw, x-(int)(hw*0.2)-1, x-(int)(hw*0.2)-1, x-hw, 
+                              x-hw+(int)(hw*0.4)+1, x, x+hw-(int)(hw*0.4)-1, x+hw, x+(int)(hw*0.2)+1, 
+                              x+(int)(hw*0.2)+1, x+hw, x+hw, x+3, x+(int)(hw*0.6), 
+                              x+(int)(hw*0.6), x+3, x-3, x-(int)(hw*0.6), x-(int)(hw*0.6) };
+            int[] ypunkte = { y, y+(int)(bh*0.2), y+(int)(bh*0.4), y+(int)(bh*0.2), 
+                              y+(int)(bh*0.5), y+bh, y+bh, y+(int)(bh*0.65), y+bh, y+bh, 
+                              y+(int)(bh*0.5), y+(int)(bh*0.2), y+(int)(bh*0.4), y+(int)(bh*0.2), 
+                              y, y-hh+3, y-hh-3, y-hh-hh, y-hh-hh, y-hh-3, y-hh+3 };
+            leinwand.zeichne(this, farbe, new Polygon(xpunkte, ypunkte, 21));
             leinwand.warte(10);
         }
     }
 
     /**
-     * Lï¿½sche dieses Dreieck vom Bildschirm.
+     * Lösche diese Person vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {
