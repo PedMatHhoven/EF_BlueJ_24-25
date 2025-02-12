@@ -1,5 +1,6 @@
-public class Bild
-{
+package Gesicht;
+
+public class Bild {
     private Quadrat Gesicht;
     private Rechteck Mund;
     private Dreieck erstesDreieck;
@@ -10,13 +11,7 @@ public class Bild
     private Kreis PupilleE;
     private Kreis PupilleZ;
 
-    public Bild()
-    {
-       
-    }
-
-    public void zeichne()
-    {
+    public void zeichne() {
         Gesicht = new Quadrat();
         Gesicht.groesseAendern(200);
         Gesicht.sichtbarMachen();
@@ -70,6 +65,5 @@ public class Bild
         PupilleZ.horizontalBewegen(-30);
         PupilleZ.groesseAendern(20);
         PupilleZ.sichtbarMachen();
-
     }
 }

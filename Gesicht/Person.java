@@ -1,13 +1,11 @@
 package Gesicht;
-
-
 import java.awt.Polygon;
 
 /**
  * Eine Persion, die manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kï¿½lling und David J. Barnes
+ * @author Michael Kölling und David J. Barnes
  * @version 31.07.2011
  */
 
@@ -134,8 +132,8 @@ public class Person {
     }
 
     /**
-     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
+     * Ändere die Höhe in 'neueHoehe' und die Breite in 'neueBreite'. Beide
+     * Angaben müssen größer gleich Null sein.
      */
     public void groesseAendern(int neueHoehe, int neueBreite) {
         loeschen();
@@ -145,7 +143,7 @@ public class Person {
     }
 
     /**
-     * ï¿½ndere die Farbe dieser Person in 'neueFarbe'. Gï¿½ltige Angaben sind
+     * Ändere die Farbe dieser Person in 'neueFarbe'. Gültige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -157,8 +155,8 @@ public class Person {
      * Zeichne diese Person mit ihren aktuellen Werten auf den Bildschirm.
      */
     private void zeichnen() {
-        int bh = (int)(hoehe * 0.7);  // Kï¿½rpergrï¿½ï¿½e
-        int hh = (hoehe - bh) / 2;  // halbe Kopfgrï¿½ï¿½e
+        int bh = (int)(hoehe * 0.7);  // Körpergröße
+        int hh = (hoehe - bh) / 2;  // halbe Kopfgröße
         int hw = breite / 2;  // halbe Breite
         int x = xPosition;
         int y = yPosition;
@@ -179,7 +177,7 @@ public class Person {
     }
 
     /**
-     * Lï¿½sche diese Person vom Bildschirm.
+     * Lösche diese Person vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {

@@ -1,5 +1,4 @@
 package Original;
-
 import java.awt.geom.Ellipse2D;
 
 /**
@@ -12,13 +11,9 @@ import java.awt.geom.Ellipse2D;
 
 public class Kreis {
     private int durchmesser;
-
     private int xPosition;
-
     private int yPosition;
-
     private String farbe;
-
     private boolean istSichtbar;
 
     /**
@@ -119,7 +114,7 @@ public class Kreis {
      */
     public void langsamVertikalBewegen(int entfernung) {
         int delta;
-
+        
         if (entfernung < 0) {
             delta = -1;
             entfernung = -entfernung;

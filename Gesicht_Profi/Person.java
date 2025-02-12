@@ -1,5 +1,4 @@
 package Gesicht_Profi;
-
 import java.awt.Polygon;
 
 /**

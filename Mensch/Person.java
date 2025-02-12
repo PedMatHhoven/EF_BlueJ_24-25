@@ -1,5 +1,4 @@
 package Mensch;
-
 import java.awt.Polygon;
 
 /**

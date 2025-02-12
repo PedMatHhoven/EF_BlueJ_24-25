@@ -1,5 +1,4 @@
 package Original;
-
 import java.awt.Rectangle;
 
 /**
@@ -12,13 +11,9 @@ import java.awt.Rectangle;
 
 public class Quadrat {
     private int groesse;
-
     private int xPosition;
-
     private int yPosition;
-
     private String farbe;
-
     private boolean istSichtbar;
 
     /**

@@ -1,3 +1,4 @@
+package Gesicht;
 import java.awt.Rectangle;
 
 public class Rechteck {

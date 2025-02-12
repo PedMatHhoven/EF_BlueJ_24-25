@@ -1,5 +1,4 @@
 package Mensch;
-
 import java.awt.Polygon;
 
 /**
@@ -12,15 +11,10 @@ import java.awt.Polygon;
 
 public class Dreieck {
     private int hoehe;
-
     private int breite;
-
     private int xPosition;
-
     private int yPosition;
-
     private String farbe;
-
     private boolean istSichtbar;
 
     /**

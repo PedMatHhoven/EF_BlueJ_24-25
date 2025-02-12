@@ -1,22 +1,17 @@
-
+package Gesicht_Profi;
 import java.awt.Rectangle;
 
 
-public class rechteck {
+public class Rechteck {
     private int groessex;
-    
     private int groessey;
-
     private int xPosition;
-
     private int yPosition;
-
     private String farbe;
-
     private boolean istSichtbar;
 
     
-    public rechteck(int grx, int gry, int x, int y, String color) {
+    public Rechteck(int grx, int gry, int x, int y, String color) {
         groessex = grx;             
         groessey = gry;         
         xPosition = x;          
