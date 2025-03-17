@@ -1,6 +1,6 @@
 package Vererbung;
 
-//abstrakte Klasse - bietet Gerüst für Unterklassen
+//abstrakte Klasse - bietet Gerï¿½st fï¿½r Unterklassen
 //- kann selbst kein Objekt erstellen!
 public abstract class Form {
     protected int xPosition;

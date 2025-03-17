@@ -16,7 +16,6 @@ public class Quadrat extends Form {
         zeichnen();
     }
 
-
     public void zeichnen() {
         Leinwand leinwand = Leinwand.gibLeinwand();
         leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,

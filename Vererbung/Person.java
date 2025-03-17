@@ -20,8 +20,8 @@ public class Person extends Form {
     }
 
     public void zeichnen() {
-        int bh = (int)(hoehe * 0.7);  // Körpergröße
-        int hh = (hoehe - bh) / 2;  // halbe Kopfgröße
+        int bh = (int)(hoehe * 0.7);  //
+        int hh = (hoehe - bh) / 2;  // 
         int hw = breite / 2;  // halbe Breite
         int x = xPosition;
         int y = yPosition;
