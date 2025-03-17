@@ -5,7 +5,7 @@ import java.awt.Rectangle;
  * Ein Quadrat, das manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kölling und David J. Barnes
+ * @author Michael Kï¿½lling und David J. Barnes
  * @version 31.07.2011
  */
 
@@ -131,7 +131,7 @@ public class Quadrat {
     }
 
     /**
-     * Ändere die Größe dieses Quadrates in 'neueGroesse'. 'neueGroesse' muss
+     * ï¿½ndere die Grï¿½ï¿½e dieses Quadrates in 'neueGroesse'. 'neueGroesse' muss
      * groesser gleich Null sein.
      */
     public void groesseAendern(int neueGroesse) {
@@ -141,7 +141,7 @@ public class Quadrat {
     }
 
     /**
-     * Ändere die Farbe dieses Quadrates in 'neueFarbe'. Gültige Angaben sind
+     * ï¿½ndere die Farbe dieses Quadrates in 'neueFarbe'. Gï¿½ltige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -162,7 +162,7 @@ public class Quadrat {
     }
 
     /**
-     * Lösche dieses Quadrat vom Bildschirm.
+     * Lï¿½sche dieses Quadrat vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {

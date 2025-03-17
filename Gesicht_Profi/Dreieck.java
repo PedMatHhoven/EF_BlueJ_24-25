@@ -5,7 +5,7 @@ import java.awt.Polygon;
  * Ein Dreieck, das manipuliert werden kann und sich selbst auf einer Leinwand
  * zeichnet.
  * 
- * @author Michael Kölling und David J. Barnes
+ * @author Michael Kï¿½lling und David J. Barnes
  * @version 31.07.2011
  */
 
@@ -132,8 +132,8 @@ public class Dreieck {
     }
 
     /**
-     * Ändere die Höhe in 'neueHoehe' und die Breite in 'neueBreite'. Beide
-     * Angaben müssen größer gleich Null sein.
+     * ï¿½ndere die Hï¿½he in 'neueHoehe' und die Breite in 'neueBreite'. Beide
+     * Angaben mï¿½ssen grï¿½ï¿½er gleich Null sein.
      */
     public void groesseAendern(int neueHoehe, int neueBreite) {
 
@@ -143,7 +143,7 @@ public class Dreieck {
     }
 
     /**
-     * Ändere die Farbe dieses Dreiecks in 'neueFarbe'. Gültige Angaben sind
+     * ï¿½ndere die Farbe dieses Dreiecks in 'neueFarbe'. Gï¿½ltige Angaben sind
      * "rot", "gelb", "blau", "gruen", "lila" und "schwarz".
      */
     public void farbeAendern(String neueFarbe) {
@@ -166,7 +166,7 @@ public class Dreieck {
     }
 
     /**
-     * Lösche dieses Dreieck vom Bildschirm.
+     * Lï¿½sche dieses Dreieck vom Bildschirm.
      */
     private void loeschen() {
         if (istSichtbar) {
