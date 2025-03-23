@@ -17,9 +17,11 @@ public class Kreis extends Form {
     }
 
     public void zeichnen() {
-       Leinwand leinwand = Leinwand.gibLeinwand();
-       leinwand.zeichne(this, farbe, new Ellipse2D.Double(xPosition,
+        if (istSichtbar) {
+            Leinwand leinwand = Leinwand.gibLeinwand();
+            leinwand.zeichne(this, farbe, new Ellipse2D.Double(xPosition,
                         yPosition, durchmesser, durchmesser));
-       leinwand.warte(10);
+                        leinwand.warte(10);
+        }
     }
 }

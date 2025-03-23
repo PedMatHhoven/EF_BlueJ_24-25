@@ -16,10 +16,12 @@ public class Quadrat extends Form {
         zeichnen();
     }
 
-    public void zeichnen() {
-        Leinwand leinwand = Leinwand.gibLeinwand();
-        leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
-                         groesse, groesse));
-        leinwand.warte(10);
+    protected void zeichnen() {
+        if (istSichtbar) {
+            Leinwand leinwand = Leinwand.gibLeinwand();
+            leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
+                    groesse, groesse));
+            leinwand.warte(10);
+        }
     }
 }

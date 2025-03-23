@@ -25,9 +25,11 @@ public class Rechteck extends Form {
     }
 
     public void zeichnen() {
-        Leinwand leinwand = Leinwand.gibLeinwand(); 
-        leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
+        if (istSichtbar) {
+            Leinwand leinwand = Leinwand.gibLeinwand(); 
+            leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
                          laenge, breite));
-        leinwand.warte(10);
+            leinwand.warte(10);
+        }
     }
 }

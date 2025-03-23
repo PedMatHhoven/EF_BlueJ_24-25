@@ -20,11 +20,13 @@ public class Dreieck extends Form {
     }
 
     public void zeichnen() {
-        Leinwand leinwand = Leinwand.gibLeinwand();
-        int[] xpoints = { xPosition, xPosition + (breite / 2),
-                          xPosition - (breite / 2) };
-        int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
-        leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
-        leinwand.warte(10);
+        if (istSichtbar) {
+            Leinwand leinwand = Leinwand.gibLeinwand();
+            int[] xpoints = { xPosition, xPosition + (breite / 2),
+                              xPosition - (breite / 2) };
+            int[] ypoints = { yPosition, yPosition + hoehe, yPosition + hoehe };
+            leinwand.zeichne(this, farbe, new Polygon(xpoints, ypoints, 3));
+            leinwand.warte(10);
+        }
     }
 }

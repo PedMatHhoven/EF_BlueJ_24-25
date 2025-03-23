@@ -1,15 +1,13 @@
 package Vererbung;
 
-public class ProfiBild
-{
+public class ProfiBild {
    private Rechteck Boden;
    private Quadrat Rumpf;
    private Dreieck Kopf;
    private Kreis Spitze;
    private Person Mensch;
    
-    public ProfiBild()
-    {
+    public ProfiBild() {
         Boden = new Rechteck(50,20,50,200,"blau");
         Rumpf = new Quadrat(30,60,170,"gelb");
         Kopf = new Dreieck(25,25,75,145,"blau");
@@ -18,10 +16,18 @@ public class ProfiBild
     }
     
     public void Zeichne() {
-       Boden.zeichnen();
-       Rumpf.zeichnen();
-       Kopf.zeichnen();
-       Spitze.zeichnen();
-       Mensch.zeichnen();
+       Boden.sichtbarMachen();
+       Rumpf.sichtbarMachen();
+       Kopf.sichtbarMachen();
+       Spitze.sichtbarMachen();
+       Mensch.sichtbarMachen();
+    }
+    
+    public void Loesche() {
+       Boden.unsichtbarMachen();
+       Rumpf.unsichtbarMachen();
+       Kopf.unsichtbarMachen();
+       Spitze.unsichtbarMachen();
+       Mensch.unsichtbarMachen();
     }
 }

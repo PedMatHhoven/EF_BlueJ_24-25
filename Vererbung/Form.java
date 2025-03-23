@@ -14,7 +14,17 @@ public abstract class Form {
         farbe = f;
         istSichtbar = false;
     }
-
+    
+    public void sichtbarMachen() {
+        istSichtbar = true;
+        zeichnen();
+    }
+    
+    public void unsichtbarMachen() {
+        loeschen();
+        istSichtbar = false;
+    }
+    
     public void nachRechtsBewegen() {
         horizontalBewegen(20);
     }
@@ -76,13 +86,12 @@ public abstract class Form {
         zeichnen();
     }
    
-    public abstract void zeichnen();
+    protected abstract void zeichnen();
    
-    public void loeschen() {
+    protected void loeschen() {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
             leinwand.entferne(this);
         }
-        istSichtbar = false;
     }
 }
