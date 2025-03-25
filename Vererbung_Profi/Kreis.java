@@ -1,4 +1,4 @@
-package Vererbung;
+package Vererbung_Profi;
 
 import java.awt.geom.Ellipse2D;
 
@@ -20,8 +20,8 @@ public class Kreis extends Form {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
             leinwand.zeichne(this, farbe, new Ellipse2D.Double(xPosition,
-                        yPosition, durchmesser, durchmesser));
-                        leinwand.warte(10);
+                             yPosition, durchmesser, durchmesser));
+            leinwand.warte(10);
         }
     }
 }

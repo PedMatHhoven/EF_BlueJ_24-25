@@ -1,4 +1,4 @@
-package Vererbung;
+package Vererbung_Profi;
 
 public class ProfiBild {
    private Rechteck Boden;

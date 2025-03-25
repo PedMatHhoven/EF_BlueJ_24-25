@@ -1,4 +1,4 @@
-package Vererbung;
+package Vererbung_Profi;
 
 import java.awt.Color;
 import java.awt.Dimension;

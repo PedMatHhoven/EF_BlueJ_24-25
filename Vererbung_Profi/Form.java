@@ -1,7 +1,5 @@
-package Vererbung;
+package Vererbung_Profi;
 
-//abstrakte Klasse - bietet Ger�st f�r Unterklassen
-//- kann selbst kein Objekt erstellen!
 public abstract class Form {
     protected int xPosition;
     protected int yPosition;
@@ -88,7 +86,7 @@ public abstract class Form {
    
     protected abstract void zeichnen();
    
-    protected void loeschen() {
+    public void loeschen() {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand();
             leinwand.entferne(this);

@@ -1,4 +1,4 @@
-package Vererbung;
+package Vererbung_Profi;
 
 import java.awt.Rectangle;
 
@@ -28,7 +28,7 @@ public class Rechteck extends Form {
         if (istSichtbar) {
             Leinwand leinwand = Leinwand.gibLeinwand(); 
             leinwand.zeichne(this, farbe, new Rectangle(xPosition, yPosition,
-                         laenge, breite));
+                             laenge, breite));
             leinwand.warte(10);
         }
     }
